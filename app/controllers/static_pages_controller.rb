@@ -3,8 +3,9 @@ class StaticPagesController < ApplicationController
   def home
     return unless params[:search].present?
 
-    Flick.new #API key, #Shared secret
-
+    flickr = Flickr.new
+    @json_output = flickr.photos.search tags: params[:search]
+    @links = @json_output.each { |p| Flickr.url(p) }
   end
 
   # if params are not blank
