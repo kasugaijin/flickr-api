@@ -6,5 +6,5 @@ Connection to the Flickr API was handled by the Flickr Ruby Gem, which allows yo
 
 Following security best practices, the Figaro Ruby Gem was used to create environment variables in application.yml, which is added to the gitignore list and not pushed to GitHub and made publically available. As such, if you want to clone this repo and run the application, you will need to input your own API key and secret, which you can access from Flickr. 
 
-Gif of application use: !(/png.png?raw=true "")
+![Gif](./gif.gif?raw=true "")
 
