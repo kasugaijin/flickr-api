@@ -1,5 +1,11 @@
-  <% unless @json_output.nil? %>
-    <% @links.each do |i| %>
-      <%= image_tag(i) %>
+<div class='image-container'>
+  <% unless @links.nil? %>
+    <% if @links.to_a.empty? %>
+      <p>No images match that tag.</p>
+    <% else %>
+      <% @links.each do |i| %>
+        <%= link_to (image_tag(i, class: 'image')), i %>
+      <% end %>
     <% end %>
   <% end %>
+</div>
