@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
 
     flickr = Flickr.new
     @json_output = flickr.photos.search tags: params[:search]
-    @links = @json_output.each { |p| Flickr.url(p) }
+    @links = @json_output.map { |i| Flickr.url_m(i) }
   end
 
   # if params are not blank
